@@ -91,7 +91,7 @@ icon4.onclick = () => {
 
 window.onresize = () => {
   setNavHeight();
-
+/*
   if (window.matchMedia("(max-width: 1023px) and (min-width: 600px)").matches) {
     masonry.style.gridTemplateColumns = "repeat(3, minmax(100px, 1fr))";
   } else if (window.matchMedia("(min-width: 1024px) ").matches) {
@@ -102,5 +102,5 @@ window.onresize = () => {
 
   if (window.matchMedia("(max-width: 768px) and (min-width: 600px)").matches) {
     masonry.style.gridTemplateColumns = "repeat(2, minmax(100px, 1fr))";
-  }
+  }*/
 };
