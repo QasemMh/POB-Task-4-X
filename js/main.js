@@ -1,10 +1,14 @@
 // Global Function
 const get = (item) => document.querySelector(item);
 const getAll = (all) => document.querySelectorAll(all);
-//back to top button
+
+/*
+ *back to top button*
+ */
 document.querySelector(".back_To_Top").onclick = () => {
   window.scrollTo(0, 0);
 };
+
 /*
  *Navbar*
  */
@@ -12,7 +16,6 @@ const navbar = get(".navbar-container");
 const menu = get(".navbar__menu");
 const navbarItem = getAll(".navbar__item");
 const body = get("body");
-const navbarContainer = get(".navbar-container");
 const dropDownBtn = get(".navbar__drop__btn");
 const dropDownList = get(".navbar__drop__ul");
 const dropDownIcon = get(".navbar__drop__i");
@@ -31,8 +34,6 @@ navbarItem.forEach((e, index) => {
   }
 });
 
-//set height when resize window width
-
 //hide / show dropdown Menu
 dropDownBtn.addEventListener("click", dropDownMenu);
 
@@ -44,12 +45,12 @@ function hideShowNav() {
   previousPosition = currentPosition;
 }
 function activeNav() {
-  navbarContainer.classList.toggle("active");
+  navbar.classList.toggle("active");
   navbarItem.forEach((e) => e.classList.toggle("active"));
   body.classList.toggle("overflow__x");
 }
 function removeNav() {
-  navbarContainer.classList.remove("active");
+  navbar.classList.remove("active");
   body.classList.remove("overflow__x");
 }
 function setNavHeight() {
@@ -68,14 +69,14 @@ function dropDownMenu() {
 }
 
 /*
- *masonry*
+ *Grid View*
  */
 
 let oneCol = get("#i1");
 let towCol = get("#i2");
 let threeCol = get("#i3");
 let fourCol = get("#i4");
-let masonry = get(".grid_view__grid");
+let gridView = get(".grid_view__grid");
 
 oneCol.onclick = () => {
   resizeGrid("repeat(1, minmax(200px, 1fr))", "600px");
@@ -90,36 +91,51 @@ fourCol.onclick = () => {
   resizeGrid("repeat(4, minmax(200px, 1fr))", "1200px");
 };
 function resizeGrid(column, maxWidth) {
-  masonry.style.gridTemplateColumns = column;
-  masonry.style.maxWidth = maxWidth;
+  gridView.style.gridTemplateColumns = column;
+  gridView.style.maxWidth = maxWidth;
 }
 
 let windowWidth = document.documentElement.clientWidth,
   windowHeight = document.documentElement.clientHeight;
+
 window.onresize = () => {
   if (
     document.documentElement.clientHeight != windowHeight ||
     document.documentElement.clientWidth != windowWidth
   ) {
+    //set height when window resize
     setNavHeight();
 
+    //fix resize problem on mobile
     if (window.matchMedia("only screen and (min-width: 600px)").matches) {
-      masonry.style.gridTemplateColumns =
+      gridView.style.gridTemplateColumns =
         "repeat(auto-fit, minmax(200px, 1fr))";
     } else {
-      masonry.style.gridTemplateColumns = "1fr";
+      gridView.style.gridTemplateColumns = "1fr";
     }
 
-    masonry.style.maxWidth = "1200px";
+    gridView.style.maxWidth = "1200px";
 
     windowWidth = document.documentElement.clientWidth;
     windowHeight = document.documentElement.clientHeight;
   }
 };
 
-/**lazysizes.js | lazy loading image*/
+/*
+ *lazysizes.js | lazy loading image*
+ */
 
-// const images = getAll('img[loading="lazy"]');
-// images.forEach((img) => {
-//   img.src = img.dataset.src;
-// });
+if ("loadingX" in HTMLImageElement.prototype) {
+  const images = getAll('img[loading="lazy"]');
+  images.forEach((img) => {
+    img.src = img.dataset.src;
+  });
+} else {
+  // Dynamically import the LazySizes library
+  const comment = document.createComment("*lazysizes.js | lazy loading image*");
+  const script = document.createElement("script");
+  script.src =
+    "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
+  document.body.append(comment);
+  document.body.appendChild(script);
+}
