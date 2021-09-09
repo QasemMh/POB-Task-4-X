@@ -3,7 +3,7 @@ const get = (item) => document.querySelector(item);
 const getAll = (all) => document.querySelectorAll(all);
 //back to top button
 document.querySelector(".back_To_Top").onclick = () => {
-  window.scrollTo(0,0);
+  window.scrollTo(0, 0);
 };
 /*
  *Navbar*
@@ -53,7 +53,7 @@ function removeNav() {
   body.classList.remove("overflow__x");
 }
 function setNavHeight() {
-  if (!window.matchMedia("(max-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 768px)").matches) {
     removeNav();
   }
 }
@@ -71,36 +71,55 @@ function dropDownMenu() {
  *masonry*
  */
 
-let icon1 = document.querySelector("#i1");
-let icon2 = document.querySelector("#i2");
-let icon3 = document.querySelector("#i3");
-let icon4 = document.querySelector("#i4");
-let masonry = document.querySelector(".masonry");
-icon1.onclick = () => {
-  masonry.style.gridTemplateColumns = "repeat(1, minmax(100px, 1fr))";
-};
-icon2.onclick = () => {
-  masonry.style.gridTemplateColumns = "repeat(2, minmax(100px, 1fr))";
-};
-icon3.onclick = () => {
-  masonry.style.gridTemplateColumns = "repeat(3, minmax(100px, 1fr))";
-};
-icon4.onclick = () => {
-  masonry.style.gridTemplateColumns = "repeat(4, minmax(100px, 1fr))";
-};
+let oneCol = get("#i1");
+let towCol = get("#i2");
+let threeCol = get("#i3");
+let fourCol = get("#i4");
+let masonry = get(".grid_view__grid");
 
+oneCol.onclick = () => {
+  resizeGrid("repeat(1, minmax(200px, 1fr))", "600px");
+};
+towCol.onclick = () => {
+  resizeGrid("repeat(2, minmax(200px, 1fr))", "768px");
+};
+threeCol.onclick = () => {
+  resizeGrid("repeat(3, minmax(200px, 1fr))", "1024px");
+};
+fourCol.onclick = () => {
+  resizeGrid("repeat(4, minmax(200px, 1fr))", "1200px");
+};
+function resizeGrid(column, maxWidth) {
+  masonry.style.gridTemplateColumns = column;
+  masonry.style.maxWidth = maxWidth;
+}
+
+let windowWidth = document.documentElement.clientWidth,
+  windowHeight = document.documentElement.clientHeight;
 window.onresize = () => {
-  setNavHeight();
+  if (
+    document.documentElement.clientHeight != windowHeight ||
+    document.documentElement.clientWidth != windowWidth
+  ) {
+    setNavHeight();
 
-  if (window.matchMedia("(max-width: 1023px) and (min-width: 600px)").matches) {
-    masonry.style.gridTemplateColumns = "repeat(3, minmax(100px, 1fr))";
-  } else if (window.matchMedia("(min-width: 1024px) ").matches) {
-    masonry.style.gridTemplateColumns = "repeat(4, minmax(100px, 1fr))";
-  } else {
-    masonry.style.gridTemplateColumns = "repeat(1, minmax(100px, 1fr))";
-  }
+    if (window.matchMedia("only screen and (min-width: 600px)").matches) {
+      masonry.style.gridTemplateColumns =
+        "repeat(auto-fit, minmax(200px, 1fr))";
+    } else {
+      masonry.style.gridTemplateColumns = "1fr";
+    }
 
-  if (window.matchMedia("(max-width: 768px) and (min-width: 600px)").matches) {
-    masonry.style.gridTemplateColumns = "repeat(2, minmax(100px, 1fr))";
+    masonry.style.maxWidth = "1200px";
+
+    windowWidth = document.documentElement.clientWidth;
+    windowHeight = document.documentElement.clientHeight;
   }
 };
+
+/**lazysizes.js | lazy loading image*/
+
+// const images = getAll('img[loading="lazy"]');
+// images.forEach((img) => {
+//   img.src = img.dataset.src;
+// });
