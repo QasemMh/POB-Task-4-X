@@ -14,7 +14,7 @@ body {
 }
 body {
   font-family: "Open Sans", sans-serif;
-  overflow: auto;
+  overflow-x: hidden;
 }
 /* main class */
 body.overflow__x {
@@ -248,8 +248,7 @@ a {
   align-items: center;
 
   color: #000;
-
- }
+}
 .line i {
   display: inline-block;
   width: 50px;
@@ -261,37 +260,98 @@ a {
 .line i:hover {
   color: #22a6b3;
 }
-.masonry {
-  overflow: hidden;
-  padding: 10px;
+
+.home {
+  width: 100%;
+  height: 700px;
   display: grid;
-  grid-template-columns: repeat(1, minmax(100px, 1fr));
-  gap: 5px;
-  grid-auto-rows: 0;
-  grid-template-rows: masonry;
-  transition: all 0.3s ease;
+  place-items: center;
+  font-weight: 100;
+  letter-spacing: 4px;
+  font-size: 5vw;
+  color: #fff;
+  background: #22a6b3;
 }
-.masonry-item,
-.masonry-content {
-  border-radius: 4px;
-  overflow: hidden;
-  text-align: center;
+/*  */
+
+.grid_view__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-flow: dense;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1;
+
+  padding: 1rem;
+  overflow-x: auto;
 }
-.masonry-item {
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
-  transition: filter 0.25s ease-in-out;
+.grid_view__grid::-webkit-scrollbar {
+  display: none;
 }
-img {
-  object-fit: cover;
-  transition: all 0.3s ease;
-}
-.masonry-item:hover img {
-  transform: scale(0.97);
+/* set default width and height */
+.grid_view__grid::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1;
+  padding-bottom: 100%;
+  z-index: -1;
 }
 
-.footer{
+.grid_view__grid div:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.grid_view__one,
+.grid_view__three,
+.grid_view__tow,
+.grid_view__four {
+  display: grid;
+  place-items: center;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 8px silver;
+  transition: all 0.3s ease;
+}
+.grid_view__grid div:hover {
+  transform: scale(0.97);
+}
+.grid_view__grid img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
   width: 100%;
-  height: 60px;
+  height: 100%;
+}
+
+.grid_view__one {
+  background-color: lightblue;
+}
+.grid_view__tow {
+  background-color: lightsalmon;
+}
+.grid_view__three {
+  background-color: khaki;
+}
+.grid_view__four {
+  background-color: silver;
+}
+
+.span-h {
+  grid-column: span 2;
+}
+.span-v {
+  grid-row: span 2;
+}
+
+/*  */
+.footer {
+  width: 100%;
+  height: 80px;
   background: #333;
   color: #fff;
   display: grid;
