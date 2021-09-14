@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task-4</title>
+    <title>Lingvico - Language Learining</title>
 
     <!--font-awesome  -->
     <link
@@ -17,25 +17,45 @@
     <!-- media query -->
     <link rel="stylesheet" href="css/mediaQuery.css" />
   </head>
+
   <body>
-    <!-- back to top -->
+    <!-- *back to top* -->
     <div class="back_To_Top">
       <i class="fas fa-arrow-circle-up"></i>
     </div>
 
+    <!-- *Task 5 Share Button -->
+    <div class="share__container">
+      <span class="share__btn">SHARE <i class="fas fa-plus"></i> </span>
+
+      <div class="share">
+        <i class="fab fa-instagram share__icon share-no"></i>
+        <i class="fab fa-twitch share__icon share-no"></i>
+        <i class="fab fa-twitter share__icon share-no"></i>
+        <i class="fab fa-facebook share__icon share-no"></i>
+        <i class="fab fa-google share__icon share-no"></i>
+        <i class="fab fa-linkedin share__icon share-no"></i>
+        <i class="fab fa-instagram share__icon share-no"></i>
+        <i class="fab fa-android share__icon share-no"></i>
+        <i class="fab fa-apple share__icon share-no"></i>
+        <i class="fab fa-skype share__icon share-no"></i>
+        <i class="fab fa-microsoft share__icon share-no"></i>
+        <i class="fab fa-weebly share__icon share-no"></i>
+       </div>
+    </div>
     <!--* navbar *-->
     <header class="header">
       <div class="navbar-container">
         <div class="container">
           <div class="navbar">
-            <div class="navbar__logo"><span>LOGO</span></div>
+            <div class="navbar__logo"><span>Lingvico</span></div>
             <div class="navbar__menu">
               <i class="fas fa-bars"></i>
             </div>
             <nav class="navbar__nav">
               <ul class="navbar__ul">
                 <li class="navbar__item">
-                  <a href="#" class="navbar__link">HOME</a>
+                  <a href="index.html" class="navbar__link">HOME</a>
                 </li>
 
                 <li class="navbar__item">
@@ -44,7 +64,7 @@
                 <!-- drop down menu -->
                 <li class="navbar__item navbar__drop">
                   <button class="navbar__link navbar__drop__btn">
-                    OUR TERMS <i class="fas fa-angle-down navbar__drop__i"></i>
+                    TERMS <i class="fas fa-angle-down navbar__drop__i"></i>
                   </button>
                   <ul class="navbar__drop__ul">
                     <li class="navbar__drop__item">
@@ -62,244 +82,209 @@
                 <li class="navbar__item">
                   <a href="#" class="navbar__link">CONTACT</a>
                 </li>
+                <li class="navbar__item">
+                  <a href="team.html" class="navbar__link">OUR TEAMS</a>
+                </li>
+                <li class="navbar__item">
+                  <a href="gallery.html" class="navbar__link">GALLERY</a>
+                </li>
               </ul>
             </nav>
           </div>
         </div>
       </div>
       <!--* end navbar *-->
+
+      <!-- *Home -->
       <div class="home">
-        <h1>Welcome</h1>
+        <div class="container">
+          <div class="home__content">
+            <div class="home__text">
+              <span class="home__label">Language Learining...</span>
+              <h2 class="home__heading">Any Language You Want...</h2>
+              <h4 class="home__heading home__heading-delay1">
+                Greate Place For Education...
+              </h4>
+              <h5 class="home__heading home__heading-delay2">
+                A Traditional Of Excellence...
+              </h5>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <div class="line">
-      <h4>Choose The View:</h4>
-      <i class="fa fa-square" id="i1"></i>
-      <i class="fa fa-th-large" id="i2"></i>
-      <i class="fa fa-th" id="i3"></i>
-      <i class="fa fa-th" id="i4"></i>
-    </div>
-
-    <!-- 
-      * open live server to load image *
-     -->
-    <div class="grid_view">
+    <!-- *Task-5 - Grid/List View - Our Blog News -->
+    <div class="news">
       <div class="container">
-        <div class="grid_view__grid">
-          <div class="grid_view__one">
-            <img
-              data-src="https://picsum.photos/seed/a/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
+        <div class="news__container">
+          <div class="news__top">
+            <span class="news__top__label">Our Blog</span>
+            <h2 class="news__top__head">School's News</h2>
+            <div class="news__topcard">
+              <img
+                src="image/slider-6-copyright.jpg"
+                alt=""
+                class="news__topcard__img"
+              />
+              <div class="news__top__text">
+                <h2 class="news__top__title">
+                  Explore the New Guide to English Prepositions (Time)
+                </h2>
+                <span class="news__top__date">10 jane 2018 | Most Read</span>
+                <p class="news__top__p">
+                  We have been working on a new approach to our basic English
+                  classes, and now we finally have this new awesome guide!…
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="grid_view__tow">
-            <img
-              data-src="https://picsum.photos/seed/b/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__three span-v">
-            <img
-              data-src="https://picsum.photos/seed/c/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__four span-h">
-            <img
-              data-src="https://picsum.photos/seed/d/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__one span-v span-h">
-            <img
-              data-src="https://picsum.photos/seed/e/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__tow">
-            <img
-              data-src="https://picsum.photos/seed/f/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__three span-h">
-            <img
-              data-src="https://picsum.photos/seed/g/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__four span-v">
-            <img
-              data-src="https://picsum.photos/seed/h/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__one">
-            <img
-              data-src="https://picsum.photos/seed/i/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__tow span-v">
-            <img
-              data-src="https://picsum.photos/seed/a/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__three">
-            <img
-              data-src="https://picsum.photos/seed/k/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__four span-h">
-            <img
-              data-src="https://picsum.photos/seed/l/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__one">
-            <img
-              data-src="https://picsum.photos/seed/m/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__tow">
-            <img
-              data-src="https://picsum.photos/seed/n/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__three">
-            <img
-              data-src="https://picsum.photos/seed/o/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__four">
-            <img
-              data-src="https://picsum.photos/seed/p/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__one span-v">
-            <img
-              data-src="https://picsum.photos/seed/q/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__tow">
-            <img
-              data-src="https://picsum.photos/seed/r/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__three">
-            <img
-              data-src="https://picsum.photos/seed/s/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__four span-h">
-            <img
-              data-src="https://picsum.photos/seed/n/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__one">
-            <img
-              data-src="https://picsum.photos/seed/u/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__tow">
-            <img
-              data-src="https://picsum.photos/seed/v/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__three">
-            <img
-              data-src="https://picsum.photos/seed/w/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__four span-v span-h">
-            <img
-              data-src="https://picsum.photos/seed/x/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__one">
-            <img
-              data-src="https://picsum.photos/seed/y/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
-          </div>
-          <div class="grid_view__tow span-h">
-            <img
-              data-src="https://picsum.photos/seed/a/350"
-              alt="Dummy image"
-              loading="lazy"
-              class="lazyload"
-            />
+
+          <div class="news__articale">
+            <div class="news__articale__head">
+              <button class="news__articale__btn news__articale__btn-1">
+                List View
+              </button>
+              <button class="news__articale__btn news__articale__btn-2">
+                Grid View
+              </button>
+            </div>
+            <div class="news__articale__content">
+              <!--  -->
+              <div class="news__articale__card">
+                <div class="news__articale__image">
+                  <img src="image/post-20-copyright-112x112.jpg" alt="" />
+                </div>
+                <div class="news__articale__text">
+                  <h2 class="news__articale__title">
+                    Tips for Improving Your Speaking Skills
+                  </h2>
+                  <p class="news__articale__date">10 July, 2018</p>
+                </div>
+              </div>
+              <!--  -->
+              <div class="news__articale__card">
+                <div class="news__articale__image">
+                  <img src="image/post-4-copyright-112x112.jpg" alt="" />
+                </div>
+                <div class="news__articale__text">
+                  <h2 class="news__articale__title">
+                    58 Boring Words that Can Be Replaced
+                  </h2>
+                  <p class="news__articale__date">15 July, 2018</p>
+                </div>
+              </div>
+              <!--  -->
+              <div class="news__articale__card">
+                <div class="news__articale__image">
+                  <img src="image/post-6-copyright-112x112.jpg" alt="" />
+                </div>
+                <div class="news__articale__text">
+                  <h2 class="news__articale__title">
+                    English Mistakes That Speakers Make
+                  </h2>
+                  <p class="news__articale__date">10 nov, 2018</p>
+                </div>
+              </div>
+              <!--  -->
+              <!--  -->
+              <div class="news__articale__card">
+                <div class="news__articale__image">
+                  <img src="image/post-20-copyright-112x112.jpg" alt="" />
+                </div>
+                <div class="news__articale__text">
+                  <h2 class="news__articale__title">
+                    Tips for Improving Your Speaking Skills
+                  </h2>
+                  <p class="news__articale__date">10 July, 2018</p>
+                </div>
+              </div>
+              <!--  -->
+              <div class="news__articale__card">
+                <div class="news__articale__image">
+                  <img src="image/post-4-copyright-112x112.jpg" alt="" />
+                </div>
+                <div class="news__articale__text">
+                  <h2 class="news__articale__title">
+                    58 Boring Words that Can Be Replaced
+                  </h2>
+                  <p class="news__articale__date">15 July, 2018</p>
+                </div>
+              </div>
+              <!--  -->
+              <div class="news__articale__card">
+                <div class="news__articale__image">
+                  <img src="image/post-6-copyright-112x112.jpg" alt="" />
+                </div>
+                <div class="news__articale__text">
+                  <h2 class="news__articale__title">
+                    English Mistakes That Speakers Make
+                  </h2>
+                  <p class="news__articale__date">10 nov, 2018</p>
+                </div>
+              </div>
+              <!--  -->
+              <!--  -->
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- footer -->
+    <!-- *Task-5 - Neumorphism Cards -->
+    <div class="price">
+      <div class="container">
+        <span class="price__label">Choose a Plan</span>
+        <h2 class="price__title">Pricing Plans</h2>
+
+        <div class="price__plane">
+          <div class="price__card">
+            <div class="price__box">
+              <div class="price__content">
+                <h2 class="price__head">Easy Education</h2>
+                <span class="price__pricing">$159<sup>99</sup></span>
+                <p class="price__text">
+                  This course is perfect for someone who wants to start easy
+                  language learning.
+                </p>
+              </div>
+            </div>
+            <button class="price__btn">Choose This Program</button>
+          </div>
+          <!--  -->
+          <div class="price__card active">
+            <div class="price__box">
+              <div class="price__content">
+                <h2 class="price__head">Advanced Program</h2>
+                <span class="price__pricing">$350<sup>99</sup></span>
+                <p class="price__text">
+                  Get all the benefits from our courses, Advanced tools, teacher
+                  notes, and more other.
+                </p>
+              </div>
+            </div>
+            <button class="price__btn">Choose This Program</button>
+          </div>
+          <!--  -->
+          <div class="price__card">
+            <div class="price__box">
+              <div class="price__content">
+                <h2 class="price__head">Individual Program</h2>
+                <span class="price__pricing">$290<sup>99</sup></span>
+                <p class="price__text">
+                  Meet our professional courses, paths, books and skill
+                  assessment for individuals.
+                </p>
+              </div>
+            </div>
+            <button class="price__btn">Choose This Program</button>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+
+    <!--* footer -->
     <footer class="footer">
       <span> <i class="far fa-copyright"></i> Qasem Mohammad 2021</span>
       <!-- &#10084; -->

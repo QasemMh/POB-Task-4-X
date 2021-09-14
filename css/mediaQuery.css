@@ -1,6 +1,26 @@
 @media all and (min-width: 1024px) and (max-width: 1280px) {
 }
 
+@media all and (max-width: 1024px) {
+  .news__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .news__top {
+    width: 90%;
+  }
+  .news__articale {
+    width: 90%;
+    margin-top: 1rem;
+  }
+  .news__articale__title {
+    font-size: 1rem;
+  }
+}
 @media all and (min-width: 768px) and (max-width: 1024px) {
 }
 
@@ -44,7 +64,7 @@
 
   .navbar__link {
     padding: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   /* navbar drop down */
@@ -57,6 +77,12 @@
   .navbar__drop__ul.active {
     height: 200px;
   }
+  /* price */
+  .price__card:nth-child(2) {
+    order: -1;
+  }
+}
+@media all and (max-width: 768px) {
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
@@ -76,6 +102,4 @@
   .grid_view__grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-   
 }
- 

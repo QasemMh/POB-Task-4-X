@@ -47,7 +47,7 @@ function hideShowNav() {
 function activeNav() {
   navbar.classList.toggle("active");
   navbarItem.forEach((e) => e.classList.toggle("active"));
-  body.classList.toggle("overflow__x");
+  //body.classList.toggle("overflow__x");
 }
 function removeNav() {
   navbar.classList.remove("active");
@@ -78,18 +78,21 @@ let threeCol = get("#i3");
 let fourCol = get("#i4");
 let gridView = get(".grid_view__grid");
 
-oneCol.onclick = () => {
-  resizeGrid("repeat(1, minmax(200px, 1fr))", "600px");
-};
-towCol.onclick = () => {
-  resizeGrid("repeat(2, minmax(200px, 1fr))", "768px");
-};
-threeCol.onclick = () => {
-  resizeGrid("repeat(3, minmax(200px, 1fr))", "1024px");
-};
-fourCol.onclick = () => {
-  resizeGrid("repeat(4, minmax(200px, 1fr))", "1200px");
-};
+if (oneCol && towCol && threeCol && fourCol) {
+  oneCol.addEventListener("click", () => {
+    resizeGrid("repeat(1, minmax(200px, 1fr))", "600px");
+  });
+  towCol.addEventListener("click", () => {
+    resizeGrid("repeat(2, minmax(200px, 1fr))", "768px");
+  });
+  threeCol.addEventListener("click", () => {
+    resizeGrid("repeat(3, minmax(200px, 1fr))", "1024px");
+  });
+  fourCol.addEventListener("click", () => {
+    resizeGrid("repeat(4, minmax(200px, 1fr))", "1200px");
+  });
+}
+
 function resizeGrid(column, maxWidth) {
   gridView.style.gridTemplateColumns = column;
   gridView.style.maxWidth = maxWidth;
@@ -125,7 +128,7 @@ window.onresize = () => {
  *lazysizes.js | lazy loading image*
  */
 
-if ("loadingX" in HTMLImageElement.prototype) {
+if ("loading" in HTMLImageElement.prototype) {
   const images = getAll('img[loading="lazy"]');
   images.forEach((img) => {
     img.src = img.dataset.src;
@@ -138,4 +141,42 @@ if ("loadingX" in HTMLImageElement.prototype) {
     "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js";
   document.body.append(comment);
   document.body.appendChild(script);
+}
+
+/*
+ *Task 5
+ */
+/**
+ * news | list/grid View
+ */
+let newsContent = get(".news__articale__content");
+let lView = get(".news__articale__btn-1");
+let gView = get(".news__articale__btn-2");
+if (newsContent) {
+  lView.addEventListener("click", () => {
+    changeView("repeat(1, minmax(300px, 1fr))");
+  });
+  gView.addEventListener("click", () => {
+    changeView("repeat(auto-fill, minmax(250px, 1fr))");
+  });
+}
+function changeView(column) {
+  newsContent.style.gridTemplateColumns = column;
+}
+
+/*
+ *share button
+ */
+if (get(".share__container")) {
+  get(".share__btn").onclick = () => {
+    get(".share").classList.toggle("active");
+
+    if (get(".share__btn i").classList.contains("fa-plus")) {
+      get(".share__btn i").classList.remove("fa-plus");
+      get(".share__btn i").classList.add("fa-minus");
+    } else {
+      get(".share__btn i").classList.remove("fa-minus");
+      get(".share__btn i").classList.add("fa-plus");
+    }
+  };
 }
