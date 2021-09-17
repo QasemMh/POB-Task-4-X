@@ -102,7 +102,7 @@ let windowWidth = document.documentElement.clientWidth,
   windowHeight = document.documentElement.clientHeight;
 
 window.onresize = () => {
-  if (
+   if (
     document.documentElement.clientHeight != windowHeight ||
     document.documentElement.clientWidth != windowWidth
   ) {
@@ -124,6 +124,7 @@ window.onresize = () => {
       windowHeight = document.documentElement.clientHeight;
     }
   }
+ 
 };
 
 /*
