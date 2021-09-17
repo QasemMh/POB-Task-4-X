@@ -897,6 +897,7 @@ a {
 .todo__item:last-child {
   border-bottom: none;
 }
+
 .todo__item__wrapper {
   display: flex;
   justify-content: space-between;
@@ -958,6 +959,7 @@ a {
   border-bottom: 2px solid #fff;
   border-left: 2px solid #fff;
 }
+ 
 /* end to to sction */
 
 /*
@@ -1068,8 +1070,6 @@ a {
 *
 *
 */
-
-
 
 /*
 *

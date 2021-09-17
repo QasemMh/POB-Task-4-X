@@ -20,7 +20,6 @@
   </head>
 
   <body>
-
     <!-- back to top* -->
     <div class="back_To_Top">
       <i class="fas fa-arrow-circle-up"></i>
@@ -357,7 +356,12 @@
             <ul class="todo__ul">
               <li class="todo__item">
                 <label class="todo__item__wrapper">
-                  <input type="checkbox" class="todo__checkbox" name="" id="" />
+                  <input
+                    type="checkbox"
+                    class="todo__checkbox"
+                    name=""
+                    id="activeChecbox"
+                  />
                   <p class="todo__head">Learn new word</p>
                   <span class="todo__check"></span>
                 </label>
@@ -392,5 +396,8 @@
 
     <!--My JS File -->
     <script src="js/main.js"></script>
+    <script>
+      get("#activeChecbox").click(); 
+    </script>
   </body>
 </html>
