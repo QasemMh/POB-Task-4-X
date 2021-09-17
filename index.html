@@ -14,20 +14,21 @@
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="css/main.css" />
+
     <!-- media query -->
     <link rel="stylesheet" href="css/mediaQuery.css" />
   </head>
 
   <body>
-    <!-- *back to top* -->
+
+    <!-- back to top* -->
     <div class="back_To_Top">
       <i class="fas fa-arrow-circle-up"></i>
     </div>
 
-    <!-- *Task 5 Share Button -->
+    <!-- Task 5 Share Button -->
     <div class="share__container">
       <span class="share__btn">SHARE <i class="fas fa-plus"></i> </span>
-
       <div class="share">
         <i class="fab fa-instagram share__icon share-no"></i>
         <i class="fab fa-twitch share__icon share-no"></i>
@@ -41,9 +42,10 @@
         <i class="fab fa-skype share__icon share-no"></i>
         <i class="fab fa-microsoft share__icon share-no"></i>
         <i class="fab fa-weebly share__icon share-no"></i>
-       </div>
+      </div>
     </div>
-    <!--* navbar *-->
+
+    <!-- navbar *-->
     <header class="header">
       <div class="navbar-container">
         <div class="container">
@@ -93,9 +95,8 @@
           </div>
         </div>
       </div>
-      <!--* end navbar *-->
 
-      <!-- *Home -->
+      <!-- Home -->
       <div class="home">
         <div class="container">
           <div class="home__content">
@@ -114,7 +115,7 @@
       </div>
     </header>
 
-    <!-- *Task-5 - Grid/List View - Our Blog News -->
+    <!-- Task-5 - Grid/List View - Our Blog News -->
     <div class="news">
       <div class="container">
         <div class="news__container">
@@ -231,7 +232,7 @@
       </div>
     </div>
 
-    <!-- *Task-5 - Neumorphism Cards -->
+    <!-- Task-5 - Neumorphism Cards -->
     <div class="price">
       <div class="container">
         <span class="price__label">Choose a Plan</span>
@@ -284,14 +285,110 @@
       </div>
     </div>
 
-    <!--* footer -->
+    <!-- Task-5 Product -->
+    <div class="product">
+      <div class="container">
+        <h2 class="product__title">Our New Book</h2>
+        <p class="product__label">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis,
+          tempora.
+        </p>
+        <div class="product__cards">
+          <div class="product__card">
+            <h2 class="product__name">English For Everyone</h2>
+            <a href="#" class="product__buy">Buy Now</a>
+            <div class="product__circle"></div>
+            <div class="product__item">
+              <img src="image/01-vocab-book.png" class="product__img" alt="" />
+            </div>
+          </div>
+          <div class="product__card">
+            <h2 class="product__name">Engilsh In Use</h2>
+            <a href="#" class="product__buy">Buy Now</a>
+            <div class="product__circle"></div>
+            <div class="product__item">
+              <img
+                src="image/03-vocab-book-1.png"
+                class="product__img"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="product__card">
+            <h2 class="product__name">Engilsh Grammar</h2>
+            <a href="#" class="product__buy">Buy Now</a>
+            <div class="product__circle"></div>
+            <div class="product__item">
+              <img
+                src="image/04-grammar-book.png"
+                class="product__img"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 5 - todo list -->
+    <div class="todo">
+      <div class="container">
+        <h2 class="todo__title1">
+          OUR NEW FEATURE: <span>TODO LIST <i class="fas fa-tasks"></i></span>
+        </h2>
+        <p class="todo__label1">Mamage Your Time, Task And Your Day..</p>
+        <div class="todo-container">
+          <div class="todo__add">
+            <h3 class="todo__add__title">Manage Task</h3>
+            <div class="todo__add__wrappper">
+              <input
+                type="text"
+                placeholder="Task Name..."
+                class="todo__add__input"
+              />
+              <button class="todo__add__btn">Add</button>
+            </div>
+            <button class="todo__add__btn todo__add-remove">
+              Reomve All Task
+            </button>
+          </div>
+          <div class="todo__list">
+            <h2 class="todo__title">TODO LIST <i class="fas fa-tasks"></i></h2>
+            <ul class="todo__ul">
+              <li class="todo__item">
+                <label class="todo__item__wrapper">
+                  <input type="checkbox" class="todo__checkbox" name="" id="" />
+                  <p class="todo__head">Learn new word</p>
+                  <span class="todo__check"></span>
+                </label>
+              </li>
+              <li class="todo__item">
+                <label class="todo__item__wrapper">
+                  <input type="checkbox" class="todo__checkbox" name="" id="" />
+                  <p class="todo__head">learn new grammar</p>
+                  <span class="todo__check"></span>
+                </label>
+              </li>
+              <li class="todo__item">
+                <label class="todo__item__wrapper">
+                  <input type="checkbox" class="todo__checkbox" name="" id="" />
+                  <p class="todo__head">learn new Language</p>
+                  <span class="todo__check"></span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
     <footer class="footer">
       <span> <i class="far fa-copyright"></i> Qasem Mohammad 2021</span>
-      <!-- &#10084; -->
     </footer>
 
-    <!--lazysizes.js | lazy loading image  -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script> -->
+    <!--vanilla-tilt js : hover effect  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 
     <!--My JS File -->
     <script src="js/main.js"></script>

@@ -23,7 +23,7 @@
       <i class="fas fa-arrow-circle-up"></i>
     </div>
 
-    <!--* navbar *-->
+    <!-- navbar -->
     <header class="header">
       <div class="navbar-container">
         <div class="container">
@@ -73,19 +73,128 @@
           </div>
         </div>
       </div>
-      <!--* end navbar *-->
-      <div class="home">
-        <h1>Team</h1>
+      <!-- end navbar -->
+      <div class="team__home home">
+        <h2>Our Team</h2>
       </div>
     </header>
+
+    <!-- Task-5 Oure Team -->
+    <div class="team">
+      <div class="container">
+        <div class="team__title">Our Team</div>
+        <p class="team__label">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, sint!
+        </p>
+        <div class="team__cards">
+          <div class="team__card">
+            <div class="team__box">
+              <img
+                src="image/team-north-hefley3.png"
+                alt=""
+                class="team__img"
+              />
+              <div class="team__content">
+                <h2 class="team__head">Manager</h2>
+                <p class="team__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Perferendis suscipit autem voluptatem at vitae, excepturi
+                  ratione earum ut facere. Doloribus deleniti pariatur in
+                  molestiae magni, quidem dolore a possimus molestias?
+                </p>
+
+                <div class="team__icons">
+                  <i class="fab fa-linkedin team__icon"></i>
+                  <i class="fab fa-facebook team__icon"></i>
+                  <i class="fab fa-twitter team__icon"></i>
+                </div>
+              </div>
+              <div class="team__name">
+                <h2>Jamel Ali</h2>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="team__card">
+            <div class="team__box">
+              <img src="image/team-tom-chadwick.png" alt="" class="team__img" />
+              <div class="team__content">
+                <h2 class="team__head">C.E.O</h2>
+                <p class="team__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Perferendis suscipit autem voluptatem at vitae, excepturi
+                  ratione earum ut facere. Doloribus deleniti pariatur in
+                  molestiae magni, quidem dolore a possimus molestias?
+                </p>
+
+                <div class="team__icons">
+                  <i class="fab fa-linkedin team__icon"></i>
+                  <i class="fab fa-facebook team__icon"></i>
+                  <i class="fab fa-twitter team__icon"></i>
+                </div>
+              </div>
+              <div class="team__name">
+                <h2>Ahmad Osama</h2>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="team__card">
+            <div class="team__box">
+              <img src="image/team-dan-mcdevitt.png" alt="" class="team__img" />
+              <div class="team__content">
+                <h2 class="team__head">Programmer</h2>
+                <p class="team__text">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Perferendis suscipit autem voluptatem at vitae, excepturi
+                  ratione earum ut facere. Doloribus deleniti pariatur in
+                  molestiae magni, quidem dolore a possimus molestias?
+                </p>
+
+                <div class="team__icons">
+                  <i class="fab fa-linkedin team__icon"></i>
+                  <i class="fab fa-facebook team__icon"></i>
+                  <i class="fab fa-twitter team__icon"></i>
+                </div>
+              </div>
+              <div class="team__name">
+                <h2>Qaeem Ali</h2>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+
+
 
     <!-- footer -->
     <footer class="footer">
       <span> <i class="far fa-copyright"></i> Qasem Mohammad 2021</span>
-      <!-- &#10084; -->
     </footer>
 
     <!--My JS File -->
     <script src="js/main.js"></script>
+
+    <script>
+      let box = get(".team__card");
+      const boxRect = box.getBoundingClientRect();
+
+      /*  box.addEventListener("mousemove", (e) => {
+        const XP = (e.clientX - boxRect.left) / boxRect.width;
+        const YP = (e.clientY - boxRect.top) / boxRect.height - 0.6;
+        const XOffset = -(XP - 0.6);
+        const dxNorm = Math.min(Math.max(XOffset, -0.6), 0.6);
+
+        box.style.transform = `perspective(1000px) rotateY(${
+          dxNorm * 45
+        }deg) rotateX(${YP * 45}deg)`;
+      });
+
+      box.addEventListener("mouseleave", () => {
+        box.style.transform = "none";
+      });*/
+    </script>
   </body>
 </html>

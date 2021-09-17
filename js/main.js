@@ -109,18 +109,20 @@ window.onresize = () => {
     //set height when window resize
     setNavHeight();
 
-    //fix resize problem on mobile
-    if (window.matchMedia("only screen and (min-width: 600px)").matches) {
-      gridView.style.gridTemplateColumns =
-        "repeat(auto-fit, minmax(200px, 1fr))";
-    } else {
-      gridView.style.gridTemplateColumns = "1fr";
+    if (gridView) {
+      //fix resize problem on mobile
+      if (window.matchMedia("only screen and (min-width: 600px)").matches) {
+        gridView.style.gridTemplateColumns =
+          "repeat(auto-fit, minmax(200px, 1fr))";
+      } else {
+        gridView.style.gridTemplateColumns = "1fr";
+      }
+
+      gridView.style.maxWidth = "1200px";
+
+      windowWidth = document.documentElement.clientWidth;
+      windowHeight = document.documentElement.clientHeight;
     }
-
-    gridView.style.maxWidth = "1200px";
-
-    windowWidth = document.documentElement.clientWidth;
-    windowHeight = document.documentElement.clientHeight;
   }
 };
 
@@ -165,18 +167,108 @@ function changeView(column) {
 }
 
 /*
- *share button
+ *share button | task 5
  */
 if (get(".share__container")) {
+  let icon = get(".share__btn i");
+
   get(".share__btn").onclick = () => {
     get(".share").classList.toggle("active");
-
-    if (get(".share__btn i").classList.contains("fa-plus")) {
-      get(".share__btn i").classList.remove("fa-plus");
-      get(".share__btn i").classList.add("fa-minus");
+    if (icon.classList.contains("fa-plus")) {
+      icon.classList.remove("fa-plus");
+      icon.classList.add("fa-minus");
     } else {
-      get(".share__btn i").classList.remove("fa-minus");
-      get(".share__btn i").classList.add("fa-plus");
+      icon.classList.remove("fa-minus");
+      icon.classList.add("fa-plus");
     }
   };
 }
+
+/*
+Product item hover - task 5
+*/
+let productItems = getAll(".product__card");
+if (productItems[0]) {
+  VanillaTilt.init(productItems, {
+    max: 15,
+    speed: 400,
+  });
+}
+
+/*
+  to do list task 5
+ */
+let savedItem = []; //array to save the tasks entered by the user  to localStorage
+let addTask = get(".todo__add__btn");
+let taskTitle = get(".todo__add__input");
+
+if (addTask && taskTitle) {
+  addTask.addEventListener("click", () => {
+    if (taskTitle.value.length > 0) {
+      //add task to todo list
+      addNewTask(taskTitle.value, true);
+      taskTitle.value = "";
+    }
+  });
+}
+
+//function to add task to todo list
+//addToList @param : prevent add item again to localstorage...
+function addNewTask(title, addToList = false) {
+  //get item from localStorage if exists
+  if (localStorage.getItem("tasks") != null && addToList) {
+    savedItem = JSON.parse(localStorage.getItem("tasks"));
+  }
+
+  //create elements to add to HTML body
+  let tasks = get(".todo__ul");
+
+  let li = document.createElement("li");
+  let label = document.createElement("label");
+  let checkbox = document.createElement("input");
+  let p__title = document.createElement("p");
+  let span = document.createElement("span");
+
+  span.classList.add("todo__check");
+  p__title.classList.add("todo__head");
+  p__title.appendChild(document.createTextNode(title));
+  checkbox.classList.add("todo__checkbox");
+  checkbox.type = "checkbox";
+  label.classList.add("todo__item__wrapper");
+  li.classList.add("todo__item");
+
+  label.append(checkbox, p__title, span);
+  li.appendChild(label);
+
+  //add task to HTML body
+  tasks.appendChild(li);
+
+  if (addToList) {
+    //add tasks names to localstorage
+    savedItem.push(title);
+    localStorage.setItem("tasks", JSON.stringify(savedItem));
+  }
+}
+
+//remove localStorage | remove all tasks
+if (get(".todo__add-remove")) {
+  get(".todo__add-remove").onclick = () => {
+    if (localStorage.getItem("tasks") != null) {
+      if (confirm("Remove All Task?")) {
+        localStorage.clear();
+        window.location.reload();
+      }
+    }
+  };
+}
+
+//check localStorage when load the page
+window.onload = () => {
+  if (localStorage.getItem("tasks") != null && addTask && taskTitle) {
+    //get item from localStorage to HTML boy
+    savedItem = JSON.parse(localStorage.getItem("tasks"));
+    savedItem.forEach((e) => {
+      addNewTask(e);
+    });
+  }
+};

@@ -83,6 +83,14 @@
   }
 }
 @media all and (max-width: 768px) {
+  .home {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .home__content {
+    font-size: 1.2rem;
+  }
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
