@@ -209,6 +209,7 @@ if (addTask && taskTitle) {
       //add task to todo list
       addNewTask(taskTitle.value, true);
       taskTitle.value = "";
+      taskTitle.focus();
     }
   });
 }
